@@ -2,8 +2,7 @@ import React from 'react'
 import {css} from '@emotion/css'
 import { Logo } from './Logo'
 import styles from './navbar.module.css'
-
-
+import { Link } from 'react-router-dom'
 const Navbar = () => {
   return (
     <div
@@ -18,13 +17,17 @@ const Navbar = () => {
     gap:4px;
     justify-content : space-between;
     backdrop-filter:blur(4px);
+    z-index:50;
     
 
     `}
     >
-      <Logo/>
+      <Link to="/"><Logo/></Link>
 
-      <button className={styles.navbutton}>Add Song</button>
+
+      
+      <Link to='/Add'  className={styles.navbutton}>➕ Add Song</Link>
+      
     </div>
   )
 }

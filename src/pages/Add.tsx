@@ -1,12 +1,13 @@
 import React from 'react'
 import SongList from '../components/songs/songList';
+import SongItem from '../components/songs/songItem';
 
-const Songs = () => {
+const AddSong = () => {
   return (
     <div>
-        <SongList/>
+        <SongItem/>
     </div>
   )
 }
 
-export default Songs 
+export default AddSong

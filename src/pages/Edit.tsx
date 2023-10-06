@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Edit = () => {
+const EditSong= () => {
   return (
     <>
     </>
   )
 }
 
-export default Edit
+export default EditSong
