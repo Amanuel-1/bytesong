@@ -17,7 +17,10 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "dev": "react-scripts",
+    "server": "node server.ts",
+    "start":"run-p dev server",
+    
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -41,6 +44,7 @@
     ]
   },
   "devDependencies": {
-    "json-server": "^0.17.4"
+    "json-server": "^0.17.4",
+    "npm-run-all": "^4.1.5"
   }
 }
