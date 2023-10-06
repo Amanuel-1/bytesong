@@ -16,14 +16,25 @@
 }
 
 .songItem{
+    position: relative;
     width: 96%;
     margin-left: 2%;
     margin-right:2%;
     display:flex;
     flex-direction: row;
-    background-color: rgb(168, 81, 10);
+    gap: 1.5rem;
+    background-color: rgb(68, 52, 35);
     margin-bottom: 1rem;
     border-radius: 10px;
+
+    &:hover{
+      cursor: pointer;
+    }
+}
+.actions {
+  position: absolute;
+  top: 1rem;
+  right:1rem;
 }
 
 @media (max-width: 768px) {
