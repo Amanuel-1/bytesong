@@ -1,6 +1,9 @@
-import React from 'react'
+
 import styles from './songs.module.css'
 import styled from '@emotion/styled'
+import optionsIcon from '../../assets/options.svg'
+import {css} from '@emotion/css'
+import SongItem from './songItem'
 
 const StyledImg  =  styled.img`
               width:140px;
@@ -13,75 +16,16 @@ const StyledImg  =  styled.img`
             `
 
 const SongList = () => {
+
   return (
     <div className={styles.songPannel}>
-        <div className={styles.songItem}>
-            <div className={styles.actions}>
-              actions
-            </div>
-            <div className={styles.imageWrapper}>
-                <StyledImg src={require('../../assets/logo.png')} alt="image" />
-            </div>
-          <div className={styles.itemInfo}>
-            <h1>Song One</h1>
-            <small>Artist Abebe</small>
-          </div>
-          <div className="actions"></div>
-        </div>
-        <div className={styles.songItem}>
-            <div className={styles.imageWrapper}>
-                <StyledImg src={require('../../assets/logo.png')} alt="image" />
-            </div>
-          <div className={styles.itemInfo}>
-            <h1>Song One</h1>
-            <small>Artist Abebe</small>
-          </div>
-          <div className="actions"></div>
-        </div>
-
-        <div className={styles.songItem}>
-        <div className={styles.imageWrapper}>
-              <StyledImg src={require('../../assets/logo.png')} alt="image" />
-          </div>
-          <div className={styles.itemInfo}>
-            <h1>Song One</h1>
-            <small>Artist Abebe</small>
-          </div>
-          <div className="actions"></div>
-        </div>
-        <div className={styles.songItem}>
-            <div className={styles.imageWrapper}>
-                <StyledImg src={require('../../assets/logo.png')} alt="image" />
-            </div>
-          <div className={styles.itemInfo}>
-            <h1>Song One</h1>
-            <small>Artist Abebe</small>
-          </div>
-          <div className="actions"></div>
-        </div>
-
-        <div className={styles.songItem}>
-        <div className={styles.imageWrapper}>
-              <StyledImg src={require('../../assets/logo.png')} alt="image" />
-          </div>
-          <div className={styles.itemInfo}>
-            <h1>Song One</h1>
-            <small>Artist Abebe</small>
-          </div>
-          <div className="actions"></div>
-        </div>
-        <div className={styles.songItem}>
-            <div className={styles.imageWrapper}>
-                <StyledImg src={require('../../assets/logo.png')} alt="image" />
-            </div>
-          <div className={styles.itemInfo}>
-            <h1>Song One</h1>
-            <small>Artist Abebe</small>
-          </div>
-          <div className="actions"></div>
-        </div>
-       
-        
+       <SongItem/>
+       <SongItem/>
+       <SongItem/>
+       <SongItem/>
+       <SongItem/>
+       <SongItem/>
+       <SongItem/>
     </div>
   )
 }

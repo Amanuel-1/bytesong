@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <div className={css({
         width:"98%",
-        position:"sticky",
+        position:"fixed",
         bottom:'0',
         padding:'1%',
         display:'flex',
