@@ -1,0 +1,40 @@
+{
+    "songs": [
+      {
+        "id": "1",
+        "title": "Title One",
+        "cover": "Cover One",
+        "audio": null,
+        "artist": "Aman",
+        "createdAt": "Fri Oct 06 2023 11:06:29 GMT+0300 (East Africa Time)",
+        "updatedAt": "Fri Oct 06 2023 11:06:29 GMT+0300 (East Africa Time)"
+      },
+      {
+        "id": "2",
+        "title": "Title Two",
+        "cover": "Cover Two",
+        "audio": null,
+        "artist": "Aman",
+        "createdAt": "Fri Oct 06 2023 11:06:29 GMT+0300 (East Africa Time)",
+        "updatedAt": "Fri Oct 06 2023 11:06:29 GMT+0300 (East Africa Time)"
+      }, 
+      {
+        "id": "3",
+        "title": "Title Three",
+        "cover": "Cover Three",
+        "audio": null,
+        "artist": "Artist Three",
+        "createdAt": "Fri Oct 06 2023 11:06:29 GMT+0300 (East Africa Time)",
+        "updatedAt": "Fri Oct 06 2023 11:06:29 GMT+0300 (East Africa Time)"
+      },
+      {
+        "id": "4",
+        "title": "Title Four",
+        "cover": "Cover Four",
+        "audio": null,
+        "artist": "Artist Four",
+        "createdAt": "Fri Oct 06 2023 11:06:29 GMT+0300 (East Africa Time)",
+        "updatedAt": "Fri Oct 06 2023 11:06:29 GMT+0300 (East Africa Time)"
+      }
+    ]
+  }

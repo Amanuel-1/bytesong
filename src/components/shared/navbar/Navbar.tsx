@@ -1,7 +1,7 @@
 import React from 'react'
 import {css} from '@emotion/css'
 import { Logo } from './Logo'
-import styles from '../navbar/navbar.module.css'
+import styles from './navbar.module.css'
 
 
 const Navbar = () => {
