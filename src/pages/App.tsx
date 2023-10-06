@@ -7,6 +7,7 @@ import Footer from "../components/shared/footer/Footer";
 import Home from "./Home";
 import EditSong from "./Edit";
 import SongDetail from "../components/songs/songDetail";
+import NotFound from "../components/ErrorPages/NotFound";
 
 
 
@@ -20,6 +21,7 @@ const App = () => {
         <Route path="/Add" element={<AddSong/>} />
         <Route path="/EditSong/:id" element={<EditSong/>} />
         <Route path="/ViewSong/:id" element={<SongDetail/>} />
+        <Route path="*" element={<NotFound/>} />
       </Routes>
       <Footer/>
     </BrowserRouter>
