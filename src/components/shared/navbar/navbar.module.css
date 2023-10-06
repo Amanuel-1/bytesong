@@ -1,11 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 .logo {
     padding: 0;
     width: fit-content;
     display: flex;
     justify-content: left;
     justify-items: center;
-    gap: 2px;
+    gap: .1px;
     color: black;
+    font-family: 'Pacifico';
+    font-weight: 100;
   }
   
   .logo > img {
@@ -31,7 +34,7 @@
 
   @media (max-width: 768px) {
     .navbutton {
-      margin-right: 0.5rem; 
+      margin-right: 1.5rem; 
      
     }
   }

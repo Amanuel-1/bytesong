@@ -5,11 +5,13 @@
     flex-direction: column;
     gap: .2rem;
     justify-content: center;
-    background-color: rgb(73, 72, 72);
+    background-color: transparent;
     align-items: center;
     margin-left: 23%;
     margin-right: 27%;
     margin-top: 2rem;
+    
+    
     
 }
 
@@ -17,11 +19,13 @@
     width: 96%;
     margin-left: 2%;
     margin-right:2%;
+    display:flex;
+    flex-direction: row;
     background-color: rgb(168, 81, 10);
-    margin-top: 1rem;
     margin-bottom: 1rem;
     border-radius: 10px;
 }
+
 @media (max-width: 768px) {
     .songPannel { 
       width: 98%;
