@@ -1,0 +1,30 @@
+.logo {
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    justify-items: center;
+    gap: 2px;
+    color: black;
+  }
+  
+  .logo > img {
+    height: 60px;
+    width: 60px;
+  }
+  
+  .navbutton {
+    width: 10rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    margin-right: 4rem;
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: rgba(173, 62, 86, 0.247);
+    background-color: rgba(53, 49, 52, 0.2);
+    transition: background-color 0.3s ease;
+  }
+  
+  .navbutton:hover {
+    background-color: rgba(105, 55, 66, 0.47);
+  }
