@@ -1,6 +1,6 @@
 .logo {
     padding: 0;
-    width: 100%;
+    width: fit-content;
     display: flex;
     justify-content: left;
     justify-items: center;
@@ -27,4 +27,11 @@
   
   .navbutton:hover {
     background-color: rgba(105, 55, 66, 0.47);
+  }
+
+  @media (max-width: 768px) {
+    .navbutton {
+      margin-right: 0.5rem; 
+     
+    }
   }

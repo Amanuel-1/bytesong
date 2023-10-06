@@ -10,8 +10,7 @@ const Navbar = () => {
     className={css`
     background-color:rgba(200,100,100,0.2);
 
-    padding-left:3rem;
-    padding-left:3rem
+    padding-left:0;
     width:100vw;
     text:green;
     display:flex;

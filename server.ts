@@ -9,4 +9,6 @@ server.listen(3001, () => {
   console.log('JSON Server is running')
 })
 
+module.exports  = {jsonServer}
+
 
