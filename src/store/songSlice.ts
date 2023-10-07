@@ -12,6 +12,7 @@ export type songError ={
     error:string
 }
 
+
 type songAction ={type:string,payload:Song}
 
 
@@ -23,11 +24,11 @@ export const songSlice = createSlice({
         error:""
     },
     reducers:{
-        getSongsFetch:(state,action)=>{
+        getSongsFetch:(state)=>{
             state.isLoading = true;
-            return state
+
         },
-        getSongsSuccess:(state,action:{type:string,payload:Array<Song>})=>{
+        getSongsSuccess:(state,action)=>{
             state.songs  =  action.payload
             state.isLoading = false;
         },
@@ -39,9 +40,9 @@ export const songSlice = createSlice({
             return state
         },
         editSong:(state,action:songAction)=>{
-            state.songs.map((song,index)=>{
+            state.songs.forEach((song,index)=>{
                 if(song.id === action.payload.id){
-                    song  = action.payload
+                    state.songs[index]  = action.payload
                 }
             })
             return state
@@ -56,5 +57,6 @@ export const songSlice = createSlice({
     }
 })
 
+export type rootState  = ReturnType<typeof songSlice.reducer>;
 export const {addSong,getSongsFetch,deleteSong,editSong,getSongsSuccess,getSongsFailure} =  songSlice.actions;
 export default songSlice.reducer

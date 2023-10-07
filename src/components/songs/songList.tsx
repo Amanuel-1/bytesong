@@ -4,6 +4,11 @@ import styled from '@emotion/styled'
 import optionsIcon from '../../assets/options.svg'
 import {css} from '@emotion/css'
 import SongItem from './songItem'
+import {useEffect} from 'react';
+import {useSelector,useDispatch} from 'react-redux'
+import { Song, getSongsFetch, rootState } from '../../store/songSlice'
+import songsReducer from '../../store/songSlice'
+
 
 const StyledImg  =  styled.img`
               width:140px;
@@ -17,15 +22,26 @@ const StyledImg  =  styled.img`
 
 const SongList = () => {
 
+  const songs = useSelector((state:rootState)=>state.songs)
+  const dispatch  = useDispatch()
+
+  useEffect(()=>{
+      dispatch(getSongsFetch())
+      console.log("songs",songs)
+  },[dispatch])
+
+  
+
   return (
     <div className={styles.songPannel}>
-       <SongItem/>
-       <SongItem/>
-       <SongItem/>
-       <SongItem/>
-       <SongItem/>
-       <SongItem/>
-       <SongItem/>
+       {
+        songs?(songs.map((song:Song,index:number)=>(
+          <SongItem key={index} song={song} />
+       ))):(
+        <h1>oops no song found</h1>
+       )
+       }
+       
     </div>
   )
 }

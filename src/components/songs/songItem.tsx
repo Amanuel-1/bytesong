@@ -3,12 +3,13 @@ import optionsIcon from '../../assets/options.svg';
 import styles from './songs.module.css';
 import { Dropdown, DropdownButton, DropdownContent, DropdownItem, StyledImg } from '../../lib/constants';
 import { css } from '@emotion/css';
+import { Song } from '../../store/songSlice';
 
 
 
 
 
-const SongItem: React.FC = () => {
+const SongItem = ({song}:{song:Song}) => {
   const [actionsToggle, setActionsToggle] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -49,11 +50,11 @@ const SongItem: React.FC = () => {
         <StyledImg className={css({
           width:"120px",
           height:"100%"
-        })} src={require('../../assets/logo.png')} alt="image" />
+        })} src={song.cover} alt={song.title} />
       </div>
       <div className={styles.itemInfo}>
-        <h1>Song One</h1>
-        <small>Artist Abebe</small>
+        <h1>{song.title}</h1>
+        <small>{song.artist}</small>
       </div>
       <div className="actions"></div>
     </div>

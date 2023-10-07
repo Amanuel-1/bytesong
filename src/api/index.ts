@@ -3,7 +3,7 @@ import { Song } from "../store/songSlice";
 
 axios.defaults.baseURL = "http://localhost:3001"
 
-export const getSongsAPI  =()=> axios.get(`/songs`);
+export const getSongsAPI  =async ()=> await axios.get(`/songs`);
 
 export const getSongByIdAPI  =(id:number)=> axios.get(`/songs?id=${id}`)
 
