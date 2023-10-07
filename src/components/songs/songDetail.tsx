@@ -31,7 +31,7 @@ const SongDetail = () => {
       <div className={styles.imageColumn}>
         <StyledImg
           className={styles.songImage}
-          src=""
+          src="https://forum.plasmic.app/user_avatar/forum.plasmic.app/chungwu/45/25_2.png"
           alt="Song Cover"
         />
       </div>
