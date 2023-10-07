@@ -53,23 +53,49 @@
     grid-column:span 2;
     width:100%;
     padding:2px;
-    background-color: green;
+    background-color: rgb(45, 48, 45);
     height: 60vh;
 }
 .detailsColumn {
   grid-column:span 4;
   padding: 2px;
-  background-color: chocolate;
-  height: 60vh;
+  margin-left: 2px;
+  background-color: rgb(224, 179, 147);
+  height:fit-content;
+  width: 100%;
+  
+}
+.detailsColumn h1{
+  font-size:45px;
+  font-weight: 600;
+  width: 100%;
+  border-bottom: 20px;
+  border-color: blueviolet;
 }
 
+.title {
+  width: 100%;
+  border-bottom: 4rem;
+  border-radius: 2px;
+
+}
 
 @media (max-width: 768px) {
     .songPannel { 
       width: 98%;
       margin-left: 1%;
       margin-right: 1%;
+      
      
+    }
+    .imageColumn{
+      grid-column: span 2;
+      height: 30vh;
+
+    }
+    .detailsColumn{
+      grid-column:span 6;
+      grid-column: span 2;
     }
     .actions{
       top: .3rem;

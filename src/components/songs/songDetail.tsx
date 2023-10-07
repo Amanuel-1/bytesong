@@ -1,37 +1,62 @@
-import { css } from '@emotion/css'
-import React from 'react'
-import styles from './songs.module.css'
+import { css } from '@emotion/css';
+import React from 'react';
+import styles from './songs.module.css';
 import { StyledImg } from '../../lib/constants';
 
 const SongDetail = () => {
   return (
-    <section className={css({
-      width:"96%",
-      marginLeft:"2%",
-      marginRight:"2%", 
-      marginTop:"1rem",
-      marginBottom:"1rem",
-      backgroundColor:'blue',
-      display:'grid',
-      gridTemplateColumns:'repeat(6,1fr)',
-      gap:"10px"
-
-    })}>
-      
+    <section
+      className={css({
+        width: '96%',
+        marginLeft: '2%',
+        marginRight: '2%',
+        marginTop: '1rem',
+        marginBottom: '1rem',
+        backgroundColor: 'rgba(250,250,255,1)',
+        display: 'grid',
+        gridTemplateColumns: 'repeat(6, 1fr)',
+        gap: '10px',
+        padding: '20px',
+        borderRadius: '10px',
+        boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)',
+        '@media (max-width: 768px)': {
+          // Add styles for screens up to 768px wide
+          width: '100%',
+          borderRadius:"1px",
+          gridTemplateColumns: 'repeat(2, 1fr)',
+        },
+        
+      })}
+    >
       <div className={styles.imageColumn}>
-        <StyledImg className={css({
-          margin:"2%"
-        })} width="96%" height="96%" src='data:image/jpeg;base64,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' alt=''/>
+        <StyledImg
+          className={styles.songImage}
+          src=""
+          alt="Song Cover"
+        />
       </div>
       <div className={styles.detailsColumn}>
-        <div className="title"></div>
-        <div className="artist"></div>
-        <div className="discription"></div>
-
+        <div className={css({
+          marginBottom:"10px",
+          borderBottom: '2px solid black',
+        })}>
+          <h1 >Title One</h1>
+        </div>
+        <div className="artist">
+          <h2 className={styles.artistName}>Artist Name</h2>
+          <p className={styles.artistDescription}>
+            Description about the artist...
+          </p>
+        </div>
+        <div className="description">
+          <h2 className={styles.descriptionHeading}>Description</h2>
+          <p className={styles.songDescription}>
+            This is a sample description about the song. It provides some information and details about the song, such as its genre, themes, and any notable features or collaborations. This description helps the listeners to understand and appreciate the song better.
+          </p>
+        </div>
       </div>
-
     </section>
-  )
-}
+  );
+};
 
-export default SongDetail
+export default SongDetail;
