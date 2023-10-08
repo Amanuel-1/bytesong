@@ -7,7 +7,8 @@
         "audio": null,
         "artist": "Aman",
         "createdAt": "Fri Oct 06 2023 11:06:29 GMT+0300 (East Africa Time)",
-        "updatedAt": "Fri Oct 06 2023 11:06:29 GMT+0300 (East Africa Time)"
+        "updatedAt": "Fri Oct 06 2023 11:06:29 GMT+0300 (East Africa Time)",
+        "description":"this is a description about the song"
       },
       {
         "id": "2",
@@ -16,7 +17,8 @@
         "audio": null,
         "artist": "Aman",
         "createdAt": "Fri Oct 06 2023 11:06:29 GMT+0300 (East Africa Time)",
-        "updatedAt": "Fri Oct 06 2023 11:06:29 GMT+0300 (East Africa Time)"
+        "updatedAt": "Fri Oct 06 2023 11:06:29 GMT+0300 (East Africa Time)",
+        "description":"this is a description about the song"
       }, 
       {
         "id": "3",
@@ -25,7 +27,8 @@
         "audio": null,
         "artist": "Artist Three",
         "createdAt": "Fri Oct 06 2023 11:06:29 GMT+0300 (East Africa Time)",
-        "updatedAt": "Fri Oct 06 2023 11:06:29 GMT+0300 (East Africa Time)"
+        "updatedAt": "Fri Oct 06 2023 11:06:29 GMT+0300 (East Africa Time)",
+        "description":"this is a description about the song"
       },
       {
         "id": "4",
@@ -34,7 +37,9 @@
         "audio": null,
         "artist": "Artist Four",
         "createdAt": "Fri Oct 06 2023 11:06:29 GMT+0300 (East Africa Time)",
-        "updatedAt": "Fri Oct 06 2023 11:06:29 GMT+0300 (East Africa Time)"
+        "updatedAt": "Fri Oct 06 2023 11:06:29 GMT+0300 (East Africa Time)",
+        "description":"this is a description about the song"
+
       }
     ]
   }

@@ -9,9 +9,10 @@ const Footer = () => {
         bottom:'0',
         padding:'1%',
         display:'flex',
-        backgroundColor:'rgb(241, 184, 211)',
+        backgroundColor:'rgba(54, 44, 33,1)',
         justifyContent:'center',
-        overflow:'hidden'
+        overflow:'hidden',
+        color:'whitesmoke'
 
     })
     }>
@@ -19,7 +20,12 @@ const Footer = () => {
         <small className={css({
             
             font:'4px'
-        })}>made with ❤ by <a href="https://github.com/Amanuel-1">Me</a></small>
+        })}>made with ❤ by <a className={css({
+          color:'rgba(250,200,100,1)',
+          fontFamily:'Pacifico',
+          textDecoration:'none'
+
+        })} href="https://github.com/Amanuel-1">Me</a></small>
 
     </div>
   )

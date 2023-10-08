@@ -1,3 +1,4 @@
+import { css } from "@emotion/css";
 import styled from "@emotion/styled";
 
 export const StyledImg = styled.img`
@@ -45,4 +46,79 @@ export const DropdownItem = styled.div`
   &:hover {
     background-color: #f1f1f1;
   }
+`;
+
+export const Btn  = styled.button({
+  marginTop:"10px",
+  marginBottom:"10px",
+  marginLeft:"50px",
+  marginRight:"50px",
+  maxWidth:"12rem",
+  minWidth:"7rem",
+  minHeight:"3rem",
+  maxHeight:"4rem",
+  paddingLeft:".4rem",
+  paddingRight:".4rem",
+
+  backgroundColor:"rgba(30,30,30,.8)",
+  fontWeight:"bolder",
+  borderRadius:"8px",
+  color:"rgb(200,200,200)",
+  borderWidth:"0px",
+  transition:"background-color 0.3s ease",
+  ":hover":{
+    cursor:"pointer",
+    backgroundColor:"rgba(60,60,60,.8)"
+  }
+  
+})
+
+export const formContainerStyles = css`
+display: flex;
+justify-content: center;
+align-items: start;
+min-height: 100vh;
+
+`;
+
+export const formStyles = css`
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 20px;
+border: 1px solid #ccc;
+border-radius: 4px;
+background-color: rgba(50,30,30,.1);
+width: 400px;
+`;
+
+export const labelStyles = css`
+margin-bottom: 8px;
+text-align: left;
+width: 100%;
+`;
+
+export const inputStyles = css`
+padding: 8px;
+margin-bottom: 16px;
+width: 100%;
+border-radius: 4px;
+border: 1px solid #ccc;
+&:focus{
+  border:none;
+}
+`;
+
+export const textareaStyles = css`
+${inputStyles};
+resize: vertical;
+`;
+
+export const buttonStyles = css`
+padding: 8px 16px;
+border-radius: 4px;
+border: none;
+background-color: #007bff;
+color: #fff;
+cursor: pointer;
 `;

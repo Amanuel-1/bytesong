@@ -41,7 +41,7 @@ const SongItem = ({song}:{song:Song}) => {
           </DropdownButton>
           {actionsToggle && (
             <DropdownContent>
-              <DropdownItem>View</DropdownItem>
+              <DropdownItem onClick={()=>navigate(`/songs/${song.id}`)}>View</DropdownItem>
               <DropdownItem>Edit</DropdownItem>
               <DropdownItem>Delete</DropdownItem>
             </DropdownContent>
@@ -56,7 +56,7 @@ const SongItem = ({song}:{song:Song}) => {
         width:"100%",
         height:"100%",
         ":hover":{
-          backgroundColor:"yellow"
+          backgroundColor:"rgba(58, 58, 58, 0.616)"
         },
         transition:"background-color 0.3s ease"
       })}>

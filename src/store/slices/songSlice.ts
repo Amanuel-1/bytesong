@@ -5,6 +5,7 @@ export type Song  = {
     title:string,
     artist:string,
     cover:string,
+    description:string,
     createdAt?:Date,
     updatedAt?:Date
 }

@@ -2,14 +2,17 @@ import React from 'react'
 import {css} from '@emotion/css'
 import { Logo } from './Logo'
 import styles from './navbar.module.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import { Btn } from '../../../lib/constants'
 const Navbar = () => {
-  
+
+  const songs  = useSelector((state:any)=>state.songsList.songs)
+  const navigate = useNavigate()
   return (
     <div
     className={css`
-    background-color:rgba(200,100,100,0.2);
+    background-color:rgba(34, 24, 13, 0.658);
     position:sticky;
     top:0;
     padding-left:0;
@@ -27,7 +30,7 @@ const Navbar = () => {
       <Link to="/"><Logo/></Link>
 
       
-      <Link to='/Add'  className={styles.navbutton}>➕ Add Song</Link>
+      <Btn onClick={()=>navigate("/Add")}  className={styles.navbutton}>➕{songs.length} Add Song</Btn>
       
     </div>
   )

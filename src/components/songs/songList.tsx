@@ -22,12 +22,7 @@ const StyledImg  =  styled.img`
 
 const SongList = () => {
   const songs  = useSelector((state:any)=>state.songsList.songs)
-  const dispatch  = useDispatch()
 
-  useEffect(()=>{
-    dispatch(SongActions.getSongsFetch())
-  
-  },[dispatch])
   console.log("so these are the songs 😎 :",songs)
 
   return (

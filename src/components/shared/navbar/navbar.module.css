@@ -6,7 +6,7 @@
     justify-content: left;
     justify-items: center;
     gap: .1px;
-    color: black;
+    color: white;
     font-family: 'Pacifico';
     font-weight: 100;
   }
@@ -39,6 +39,7 @@
   @media (max-width: 768px) {
     .navbutton {
       margin-right: 1.5rem; 
+     
      
     }
   }
