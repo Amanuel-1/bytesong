@@ -6,6 +6,7 @@ object-fit: cover;
 background-color: rgb(30, 30, 30);
 border-top-left-radius: 10px;
 border-bottom-left-radius: 10px;
+
 `;
 
 export const Dropdown = styled.div`

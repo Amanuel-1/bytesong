@@ -54,15 +54,22 @@ const SongItem = ({song}:{song:Song}) => {
         gap:'2rem',
         borderRadius:"10px",
         width:"100%",
+        height:"100%",
         ":hover":{
           backgroundColor:"yellow"
         },
         transition:"background-color 0.3s ease"
       })}>
-      <div className={styles.imageWrapper}>
+      <div className={css({
+        display:'flex',
+        justifyContent:'center',
+        alignContent:'center',
+        verticalAlign:'middle'
+      })}>
         <StyledImg className={css({
           width:"180px",
-          height:"200px"
+          height:"200px",
+          margin:"0px"
         })} src={song.cover} alt={song.title} />
       </div>
       <div className={styles.itemInfo}>
