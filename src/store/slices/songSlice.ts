@@ -36,8 +36,8 @@ export const songSlice = createSlice({
             console.log("🎇🎇🎇 songSuccess CAlled",state.songs,action)
             return state
         },
-        getSongsFailure:(state)=>{
-            state.error= "Failed to Fetch Song"
+        getSongsFailure:(state,action)=>{
+            state.error= action.payload as string
             return state
         },
         addSong(state,action:songAction){
@@ -57,7 +57,11 @@ export const songSlice = createSlice({
             state.songs  = state.songs.filter((song)=>song.id !== action.payload.id)
 
             return state
-        }      
+        } ,
+        // getSongById:(state,action)=>{
+        //     const singleSong  = state.songs.filter((song)=>song.id === action.payload)
+        //     return single
+        // }  
 
     }
 })
