@@ -49,10 +49,7 @@
   
 
 }
-.songImage{
-  height: 100%;
-  width: 100%;
-}
+
 .imageColumn { 
     grid-column:span 2;
     width:100%;
@@ -63,8 +60,8 @@
 .detailsColumn {
   grid-column:span 4;
   padding: 2px;
-  margin-left: 2px;
-  background-color: rgb(224, 179, 147);
+  margin-right: 20px;
+  background-color: transparent);
   height:fit-content;
   width: 100%;
   

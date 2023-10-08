@@ -1,18 +1,23 @@
-import {call,takeEvery,put} from 'redux-saga/effects'
-import { getSongsAPI } from '../api'
-import { Song ,getSongsSuccess} from '../store/songSlice'
+import { call, takeEvery, put, PutEffect } from 'redux-saga/effects';
+import { getSongsAPI } from '../api';
+import {SongActions} from '../store/slices/songSlice';
+import { ReducerAction } from 'react';
+
 
 function* workSongFetch(): Generator<ReturnType<typeof call>, any, unknown> {
-    const songs:any = yield call(async () => await fetch("http://localhost:3001/songs").then((res)=>res.json()));
+  try {
+    const songs: any = yield call(getSongsAPI);
 
-    
-    put(getSongsSuccess(songs))
-    console.log("this is the fetched songs list 🛑🛑🎯",songs);
-    // Rest of your code
+
+    console.log('SONGS_FETCH_SUCCEDED 😎',songs);
+
+    yield put(SongActions.getSongsSuccess(songs)) as any
+  } catch (e) {
+    console.log(e);
+    yield put(SongActions.getSongsFailure()) as any
   }
+}
 
-
-export default function* rootSaga(){
-    yield takeEvery('song/getSongsFetch',workSongFetch)
-
+export default function* rootSaga() {
+  yield takeEvery('song/getSongsFetch', workSongFetch);
 }

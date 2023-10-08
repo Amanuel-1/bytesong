@@ -3,7 +3,9 @@ import {css} from '@emotion/css'
 import { Logo } from './Logo'
 import styles from './navbar.module.css'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 const Navbar = () => {
+  
   return (
     <div
     className={css`
@@ -23,7 +25,6 @@ const Navbar = () => {
     `}
     >
       <Link to="/"><Logo/></Link>
-
 
       
       <Link to='/Add'  className={styles.navbutton}>➕ Add Song</Link>

@@ -5,8 +5,9 @@ import App from './pages/App';
 import { Provider } from 'react-redux';
 import createSagaMiddleware from 'redux-saga'
 import { configureStore } from '@reduxjs/toolkit';
-import songReducer from './store/songSlice'
+import songReducer from './store/slices/songSlice';
 import rootSaga from './saga';
+import { BrowserRouter } from 'react-router-dom';
 
 const saga  = createSagaMiddleware()
 
@@ -26,7 +27,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Provider store={store}>
+    <BrowserRouter>
     <App/>
+    </BrowserRouter>
     </Provider>
   </React.StrictMode>
 );

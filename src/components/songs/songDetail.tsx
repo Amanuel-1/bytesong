@@ -8,10 +8,8 @@ const SongDetail = () => {
     <section
       className={css({
         width: '96%',
-        marginLeft: '2%',
-        marginRight: '2%',
-        marginTop: '1rem',
-        marginBottom: '1rem',
+        margin:'auto',
+        marginBottom:'6rem',
         backgroundColor: 'rgba(250,250,255,1)',
         display: 'grid',
         gridTemplateColumns: 'repeat(6, 1fr)',
@@ -29,11 +27,14 @@ const SongDetail = () => {
       })}
     >
       <div className={styles.imageColumn}>
-        <StyledImg
-          className={styles.songImage}
+        <div className={styles.imageWrapper}>
+        <img className={styles.songImage}
           src="https://forum.plasmic.app/user_avatar/forum.plasmic.app/chungwu/45/25_2.png"
           alt="Song Cover"
+          height="370px"
+          width="100%"
         />
+        </div>
       </div>
       <div className={styles.detailsColumn}>
         <div className={css({
@@ -44,9 +45,6 @@ const SongDetail = () => {
         </div>
         <div className="artist">
           <h2 className={styles.artistName}>Artist Name</h2>
-          <p className={styles.artistDescription}>
-            Description about the artist...
-          </p>
         </div>
         <div className="description">
           <h2 className={styles.descriptionHeading}>Description</h2>

@@ -6,8 +6,8 @@ import {css} from '@emotion/css'
 import SongItem from './songItem'
 import {useEffect} from 'react';
 import {useSelector,useDispatch} from 'react-redux'
-import { Song, getSongsFetch, rootState } from '../../store/songSlice'
-import songsReducer from '../../store/songSlice'
+import { Song,SongActions,rootState } from '../../store/slices/songSlice'
+import songsReducer from '../../store/slices/songSlice'
 
 
 const StyledImg  =  styled.img`
@@ -21,16 +21,14 @@ const StyledImg  =  styled.img`
             `
 
 const SongList = () => {
-
-  const songs = useSelector((state:rootState)=>state.songs)
+  const songs  = useSelector((state:any)=>state.songsList.songs)
   const dispatch  = useDispatch()
 
   useEffect(()=>{
-      dispatch(getSongsFetch())
-      console.log("songs",songs)
-  },[dispatch])
-
+    dispatch(SongActions.getSongsFetch())
   
+  },[dispatch])
+  console.log("so these are the songs 😎 :",songs)
 
   return (
     <div className={styles.songPannel}>
