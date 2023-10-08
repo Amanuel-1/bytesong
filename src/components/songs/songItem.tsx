@@ -33,7 +33,7 @@ const SongItem = ({song}:{song:Song}) => {
   }, []);
 
   return (
-    <div onClick={()=>navigate(`/songs/${song.id}`)} className={styles.songItem}>
+    <div  className={styles.songItem}>
       <div className={styles.actions}>
         <Dropdown ref={dropdownRef}>
           <DropdownButton onClick={toggleActions}>
@@ -48,6 +48,17 @@ const SongItem = ({song}:{song:Song}) => {
           )}
         </Dropdown>
       </div>
+      <div onClick={()=>navigate(`/songs/${song.id}`)} className={css({
+        display:'flex',
+        flexDirection:'row',
+        gap:'2rem',
+        borderRadius:"10px",
+        width:"100%",
+        ":hover":{
+          backgroundColor:"yellow"
+        },
+        transition:"background-color 0.3s ease"
+      })}>
       <div className={styles.imageWrapper}>
         <StyledImg className={css({
           width:"180px",
@@ -58,7 +69,7 @@ const SongItem = ({song}:{song:Song}) => {
         <h1>{song.title}</h1>
         <small>{song.artist}</small>
       </div>
-      <div className="actions"></div>
+      </div>
     </div>
   );
 };
