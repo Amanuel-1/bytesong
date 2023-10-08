@@ -22,7 +22,9 @@ export const songSlice = createSlice({
     initialState:{
         songs: [] as Array<Song>,
         isLoading:false,
+        lastIndex :5,
         error:""
+
     },
     reducers:{
         getSongsFetch:(state)=>{
@@ -41,8 +43,11 @@ export const songSlice = createSlice({
             state.error= action.payload as string
             return state
         },
-        addSong(state,action:songAction){
-            state.songs.push(action.payload)
+        addSong(state,action){
+            console.log("addSong action dispatched")
+            state.songs.push({...action.payload,id:state.lastIndex})
+            state.lastIndex+=1
+            
             return state
         },
         editSong:(state,action:songAction)=>{

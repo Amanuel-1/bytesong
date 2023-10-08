@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { css } from '@emotion/css';
 import { formContainerStyles, formStyles, labelStyles, inputStyles, textareaStyles, buttonStyles, Btn } from '../lib/constants';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { SongActions } from '../store/slices/songSlice';
 const AddSong = () => {
+  const dispatch = useDispatch()
+  const lastIndex  = useSelector((state:any)=>state.songsList.lastIndex)
   const [songEntry, setSongEntry] = useState({
     title: '',
     artist: '',
@@ -24,7 +27,9 @@ const AddSong = () => {
 
   const handleSubmit = (event:any) => {
     event.preventDefault();
-    console.log(songEntry);
+    setSongEntry({...songEntry,createdAt: Date.now().toString(),updatedAt:Date.now().toString()})
+    console.log("to be submitted 🎯 ",songEntry)
+    dispatch(SongActions.addSong(songEntry))
     // Add your form submission logic here
   };
 

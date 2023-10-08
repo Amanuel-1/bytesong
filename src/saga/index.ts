@@ -1,4 +1,4 @@
-import { call, takeEvery, put, PutEffect } from 'redux-saga/effects';
+import { call, takeEvery,takeLatest, put, PutEffect } from 'redux-saga/effects';
 import { getSongByIdAPI, getSongsAPI } from '../api';
 import {Song, SongActions} from '../store/slices/songSlice';
 import { ReducerAction } from 'react';
@@ -17,6 +17,8 @@ function* workSongFetch(): Generator<ReturnType<typeof call>, any, unknown> {
     yield put(SongActions.getSongsFailure(e)) as any
   }
 }
+
+
 
 export async function getSongById(id:number){
   console.log("getSongById is called ✋")
