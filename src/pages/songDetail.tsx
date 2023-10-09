@@ -1,17 +1,16 @@
 import { css } from '@emotion/css';
-import React, { useState } from 'react';
 import styles from '../components/songs/songs.module.css';
 import { useParams } from 'react-router-dom';
-import useEffect from 'react';
 import { useSelector } from 'react-redux';
 import { Song } from '../store/slices/songSlice';
+import { useDispatch } from 'react-redux';
 
 const SongDetail = () => {
 
 const {id} = useParams()
 let songId:number  = parseInt(id as string)??0
 const songs:Array<Song>  = useSelector((state:any)=>state.songsList.songs)
-
+const dispatch = useDispatch()
 const song= songs.find((s)=>s.id == songId)
 
 

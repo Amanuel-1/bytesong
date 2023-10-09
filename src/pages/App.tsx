@@ -43,8 +43,8 @@ const AppRoutes = () => {
       <Btn onClick={() => navigate(-1)}>Back</Btn>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Add" element={<AddSong />} />
-        <Route path="/EditSong/:id" element={<EditSong />} />
+        <Route path="/add" element={<AddSong />} />
+        <Route path="/editSong/:id" element={<EditSong />} />
         <Route path="/songs/:id" element={<SongDetail />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

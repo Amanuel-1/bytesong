@@ -50,17 +50,18 @@ export const songSlice = createSlice({
             
             return state
         },
-        editSong:(state,action:songAction)=>{
-            state.songs.forEach((song,index)=>{
-                if(song.id === action.payload.id){
-                    state.songs[index]  = action.payload
+        editSong:(state,action)=>{
+            for(let i=0 ; i<(state.songs).length;i++){
+                if(state.songs[i].id === action.payload.id){
+                    state.songs[i].title  = "updated"
+                    return state
                 }
-            })
+            }
             return state
         },
 
-        deleteSong:(state,action:songAction)=>{
-            state.songs  = state.songs.filter((song)=>song.id !== action.payload.id)
+        deleteSong:(state,action:{type:any,payload:number})=>{
+            state.songs  = state.songs.filter((song)=>song.id !== action.payload)
 
             return state
         } ,

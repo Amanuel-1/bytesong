@@ -30,7 +30,7 @@ const Navbar = () => {
       <Link to="/"><Logo/></Link>
 
       
-      <Btn onClick={()=>navigate("/Add")}  className={styles.navbutton}>➕{songs.length} Add Song</Btn>
+      <Btn onClick={()=>navigate("/add")}  className={styles.navbutton}>➕{songs.length} Add Song</Btn>
       
     </div>
   )

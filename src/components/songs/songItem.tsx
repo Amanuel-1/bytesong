@@ -3,8 +3,9 @@ import optionsIcon from '../../assets/options.svg';
 import styles from './songs.module.css';
 import { Dropdown, DropdownButton, DropdownContent, DropdownItem, StyledImg } from '../../lib/constants';
 import { css } from '@emotion/css';
-import { Song } from '../../store/slices/songSlice';
+import { Song, SongActions } from '../../store/slices/songSlice';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 
 
@@ -14,6 +15,7 @@ const SongItem = ({song}:{song:Song}) => {
   const [actionsToggle, setActionsToggle] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate()
+  const dispatch = useDispatch()
 
   const toggleActions = () => {
     setActionsToggle(!actionsToggle);
@@ -42,8 +44,8 @@ const SongItem = ({song}:{song:Song}) => {
           {actionsToggle && (
             <DropdownContent>
               <DropdownItem onClick={()=>navigate(`/songs/${song.id}`)}>View</DropdownItem>
-              <DropdownItem>Edit</DropdownItem>
-              <DropdownItem>Delete</DropdownItem>
+              <DropdownItem onClick={()=>navigate(`/editSong/${song.id}`)}>Edit</DropdownItem>
+              <DropdownItem onClick={()=>dispatch(SongActions.deleteSong(song.id))}>Delete</DropdownItem>
             </DropdownContent>
           )}
         </Dropdown>
