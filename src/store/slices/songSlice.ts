@@ -1,4 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit'
+import { redirect } from 'react-router-dom'
 
 export type Song  = {
     id:number,
@@ -40,7 +41,18 @@ export const songSlice = createSlice({
             return state
         },
         getSongsFailure:(state,action)=>{
-            state.error= action.payload as string
+            state.error= "sorry unable to get the songs. \n"+action.payload
+            return state
+        },
+        editSongSuccess:(state,action)=>{
+            state.songs = action.payload
+            state.isLoading=false
+            redirect("/home")
+            console.log("🎇🎇🎇 songSuccess CAlled",state.songs,action)
+            return state
+        },
+        editSongFailure:(state,action)=>{
+            state.error= "sorry unable to edit the song. \n"+action.payload
             return state
         },
         addSong(state,action){
@@ -51,9 +63,12 @@ export const songSlice = createSlice({
             return state
         },
         editSong:(state,action)=>{
+            if(!action.payload.id){
+                console.log("opps there is no id in your action ")
+            }
             for(let i=0 ; i<(state.songs).length;i++){
                 if(state.songs[i].id === action.payload.id){
-                    state.songs[i].title  = "updated"
+                    state.songs[i] = action.payload
                     return state
                 }
             }

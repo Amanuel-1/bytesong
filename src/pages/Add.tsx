@@ -30,11 +30,12 @@ const AddSong = () => {
     setSongEntry({...songEntry,createdAt: Date.now().toString(),updatedAt:Date.now().toString()})
     console.log("to be submitted 🎯 ",songEntry)
     dispatch(SongActions.addSong(songEntry))
-    // Add your form submission logic here
+    
   };
 
   return (
     <div className={formContainerStyles}>
+      <div className="alert"></div>
       <form className={formStyles} onSubmit={handleSubmit}>
         <label className={labelStyles} htmlFor="title">
           Title:

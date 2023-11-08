@@ -10,18 +10,17 @@ import { useParams } from 'react-router-dom';
 const EditSong = () => {
   const {id} = useParams()
   const dispatch = useDispatch()
-  const lastIndex  = useSelector((state:any)=>state.songsList.lastIndex)
-  
   let songId:number  = parseInt(id as string)??0 
-  const songs:Array<Song>  = useSelector((state:any)=>state.songsList.songs)
+  const songs:Song[] = useSelector((state:any)=>state.songsList.songs)
   const song= songs.find((s)=>s.id == songId)
   const [songEntry, setSongEntry] = useState({
+    id:songId,
     title: song?.title,
     artist: song?.artist,
     cover: song?.cover,
     description: song?.description,
     createdAt: song?.createdAt,
-    updatedAt: song?.updatedAt+""
+    updatedAt: song?.updatedAt
   });
 
   const handleFormChange = (event:any) => {
@@ -36,7 +35,7 @@ const EditSong = () => {
 
   const handleSubmit = (event:any) => {
     event.preventDefault();
-    setSongEntry({...songEntry,updatedAt:Date.now().toString()})
+    setSongEntry({...songEntry,updatedAt:new Date()})
     console.log("to be submitted 🎯 ",songEntry)
     dispatch(SongActions.editSong(songEntry))
     // Add your form submission logic here

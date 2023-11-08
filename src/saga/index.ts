@@ -41,6 +41,19 @@ export function* workFetchASong(action:any):any{
 
 }
 
+export function* workEditASong(action:any){
+  const currentSong   = action.payload
+  try{
+    yield put(SongActions.editSong(currentSong))
+    yield put(SongActions.editSongSuccess(currentSong)) as any
+  }
+  catch(e){
+    console.log(e);
+    yield put(SongActions.editSongFailure(e)) as any
+  }
+
+}
+
 export default function* rootSaga() {
   yield takeEvery('song/getSongsFetch', workSongFetch);
 }

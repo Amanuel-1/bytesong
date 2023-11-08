@@ -17,12 +17,7 @@ import { Btn } from "../lib/constants";
 
 const App = () => {
 
-    const dispatch  = useDispatch()
 
-  useEffect(()=>{
-    dispatch(SongActions.getSongsFetch())
-  
-  },[dispatch])
   return (
     
       <>
