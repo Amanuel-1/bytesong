@@ -122,3 +122,46 @@ background-color: #007bff;
 color: #fff;
 cursor: pointer;
 `;
+
+
+export const SongContainer = styled.div({
+  position:'relative',
+  width:'100vw',
+  height:'100vh',
+  display:"flex",
+  textAlign:"center",
+  flexDirection:"column",
+  justifyContent:'center',
+  alignContent:'center'
+
+
+})
+
+export const Loading = styled.div({
+  backgroundColor:"blue",
+  width:'100vw',
+  height:'100vh',
+  position:"absolute",
+  display:"flex",
+  flexDirection:"column",
+  gap:'4rem',
+  justifyContent:"center",
+  alignContent:"center",
+  verticalAlign:"middle",
+  fontSize:'40px',
+  fontWeight:'900'
+
+})
+export const StatusBar = styled.div({
+
+  width:'100vw',
+  height:'1.5rem',
+  display:"flex",
+  flexDirection:"row",
+  justifyContent:"center",
+  alignContent:"center",
+  verticalAlign:"middle",
+  fontSize:'15px',
+  fontWeight:'400'
+
+})

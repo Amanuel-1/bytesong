@@ -35,7 +35,7 @@ const AppRoutes = () => {
   return (
     <>
       
-      <Btn onClick={() => navigate(-1)}>Back</Btn>
+      <Btn onClick={() => navigate(-2)}>Back</Btn>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/add" element={<AddSong />} />

@@ -1,6 +1,7 @@
 
 .songPannel {
     width:55%;
+    height:120vh;
     display: flex;
     flex-direction: column;
     gap: .2rem;
@@ -9,8 +10,9 @@
     align-items: center;
     margin-left: 23%;
     margin-right: 27%;
-    margin-top: 2rem;
-    margin-bottom: 4rem;
+    padding-top: 25rem;
+    padding-bottom: 15rem;
+ 
     
     
 }

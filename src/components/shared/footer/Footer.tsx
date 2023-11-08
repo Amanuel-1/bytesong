@@ -1,12 +1,59 @@
 import React from 'react'
 import {css} from '@emotion/css'
+import { useSelector } from 'react-redux'
+import { StatusBar } from '../../../lib/constants'
 
 const Footer = () => {
+  let error:string= useSelector((state:any)=>state.songsList.error)
+  let success:string= useSelector((state:any)=>state.songsList.success)
+
+  
+    const getStatus=()=>{
+      if(error){
+        return {color:'red',message:error}
+      }
+      else if(success){
+        return {color:'green',message:success}
+      }
+      else{
+        return {}
+      }
+    }
+
+    var status = getStatus()
+  
+    
   return (
+   <div className={css({
+    width:"100%",
+    position:"fixed",
+    bottom:'0',
+    display:'flex',
+    flexDirection:'column',
+
+    backgroundColor:'rgba(54, 44, 33,1)',
+    justifyContent:'center',
+    overflow:'hidden',
+    color:'whitesmoke'
+
+})
+}>
+     {
+      (status) && <StatusBar className={css({backgroundColor:status.color})}>
+                    {status.message}
+                    <button className={css({
+                      justifySelf:'end',
+                      fontSize:'10px'
+
+                    })} onClick={()=>{
+                      status ={}
+                    }}>X</button>
+                  </StatusBar>
+    }
     <div className={css({
         width:"98%",
-        position:"fixed",
-        bottom:'0',
+        
+   
         padding:'1%',
         display:'flex',
         backgroundColor:'rgba(54, 44, 33,1)',
@@ -28,6 +75,7 @@ const Footer = () => {
         })} href="https://github.com/Amanuel-1">Me</a></small>
 
     </div>
+   </div>
   )
 }
 
