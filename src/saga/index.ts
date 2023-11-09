@@ -1,5 +1,5 @@
 import { call, takeEvery,takeLatest, put, PutEffect } from 'redux-saga/effects';
-import { getSongByIdAPI, getSongsAPI } from '../api';
+import { getSongByIdAPI, getSongsAPI, updateSongAPI } from '../api';
 import {Song, SongActions} from '../store/slices/songSlice';
 import { ReducerAction } from 'react';
 
@@ -44,7 +44,7 @@ export function* workFetchASong(action:any):any{
 export function* workEditASong(action:any){
   const currentSong   = action.payload
   try{
-    yield put(SongActions.editSong(currentSong))
+    yield call(updateSongAPI,currentSong)
     yield put(SongActions.editSongSuccess(currentSong)) as any
   }
   catch(e){
@@ -56,4 +56,5 @@ export function* workEditASong(action:any){
 
 export default function* rootSaga() {
   yield takeEvery('song/getSongsFetch', workSongFetch);
+  yield takeLatest('song/editSong',workEditASong)
 }

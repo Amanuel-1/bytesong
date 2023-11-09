@@ -10,7 +10,7 @@ const Footer = () => {
   
     const getStatus=()=>{
       if(error){
-        return {color:'red',message:error}
+        return {color:'rgba(255,20,50,1)',message:error}
       }
       else if(success){
         return {color:'green',message:success}

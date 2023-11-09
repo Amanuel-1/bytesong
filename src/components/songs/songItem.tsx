@@ -44,7 +44,10 @@ const SongItem = ({song}:{song:Song}) => {
           {actionsToggle && (
             <DropdownContent>
               <DropdownItem onClick={()=>navigate(`/songs/${song.id}`)}>View</DropdownItem>
-              <DropdownItem onClick={()=>navigate(`/editSong/${song.id}`)}>Edit</DropdownItem>
+              <DropdownItem onClick={()=>{
+                dispatch(SongActions.updateChangingSong(song.id))
+                navigate(`/editSong/${song.id}`)
+                }}>Edit</DropdownItem>
               <DropdownItem onClick={()=>dispatch(SongActions.deleteSong(song.id))}>Delete</DropdownItem>
             </DropdownContent>
           )}

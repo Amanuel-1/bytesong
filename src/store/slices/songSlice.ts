@@ -25,10 +25,12 @@ export const songSlice = createSlice({
     name:"song",
     initialState:{
         songs: [] as Song[],
+        selectedSong:{} as Song,
         isLoading:false,
         lastIndex :5,
         error:"",
-        success:""
+        success:"",
+        changeSong:{} as Song
 
 
     },
@@ -102,6 +104,21 @@ export const songSlice = createSlice({
 
             return state
         } ,
+
+        updateChangingSong:(state,action:{type:any,payload:number})=>{
+            const songId  =  action.payload
+            const song  = state.songs.find((s)=>s.id == songId)
+
+            if(song){
+                state.changeSong =song
+            }
+            else{
+                state.success =""
+                state.error ="there is no song with the id "+songId
+            }
+
+            
+        }
         // getSongById:(state,action)=>{
         //     const singleSong  = state.songs.filter((song)=>song.id === action.payload)
         //     return single
