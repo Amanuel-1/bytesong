@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Song, SongActions } from '../store/slices/songSlice'
 import { Loading, SongContainer, StatusBar } from '../lib/constants'
 import { css } from '@emotion/css'
+import loader from '../assets/loader.svg'
 
 const Home = () => {
   const dispatch  = useDispatch()
@@ -12,17 +13,18 @@ const Home = () => {
 
 
   useEffect(()=>{
-    // dispatch(SongActions.getSongsFetch())
-    if(!songs.length){
+
       dispatch(SongActions.getSongsFetch())
-    }
+  
   
   },[dispatch])
   return (
     <SongContainer>
       {        
       isLoading &&<Loading>
-              loading
+              <img className={css({
+                placeSelf:'center'
+              })} src={loader} alt='' width={150} height={150}/>
                 </Loading>}
       <SongList/>
     </SongContainer>

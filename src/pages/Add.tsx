@@ -7,6 +7,7 @@ const AddSong = () => {
   const dispatch = useDispatch()
   const lastIndex  = useSelector((state:any)=>state.songsList.lastIndex)
   const [songEntry, setSongEntry] = useState({
+    id:lastIndex,
     title: '',
     artist: '',
     cover: '',
@@ -30,6 +31,8 @@ const AddSong = () => {
     setSongEntry({...songEntry,createdAt: Date.now().toString(),updatedAt:Date.now().toString()})
     console.log("to be submitted 🎯 ",songEntry)
     dispatch(SongActions.addSong(songEntry))
+    dispatch(SongActions.getSongsFetch())
+    dispatch(SongActions.addSongSuccess(songEntry))
     
   };
 

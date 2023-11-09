@@ -46,12 +46,12 @@ export const songSlice = createSlice({
             state.success ="song fetched successfully"
             state.error= ""
             console.log("🎇🎇🎇 songSuccess CAlled",state.songs,action)
-            return state
+
         },
         getSongsFailure:(state,action)=>{
             state.error= "sorry unable to get the songs. \n"+action.payload
             state.success =""
-            return state
+
         },
         editSongSuccess:(state,action)=>{
             state.songs = action.payload
@@ -59,19 +59,17 @@ export const songSlice = createSlice({
             state.success ="song updated successfully"
             state.error= ""
             console.log("🎇🎇🎇 songSuccess CAlled",state.songs,action)
-            return state
+
         },
         editSongFailure:(state,action)=>{
             state.error= "sorry unable to edit the song. \n"+action.payload
             state.success=""
-            return state
+
         },
         addSong(state,action){
             console.log("addSong action dispatched")
             state.songs.push({...action.payload,id:state.lastIndex})
             state.lastIndex+=1
-            
-            return state
         },
         addSongSuccess:(state,action)=>{
             state.songs = action.payload
@@ -79,12 +77,10 @@ export const songSlice = createSlice({
             state.success ="song added successfully"
             state.error= ""
             console.log("🎇🎇🎇 songSuccess CAlled",state.songs,action)
-            return state
         },
         addSongFailure:(state,action)=>{
             state.error= "sorry unable to add the song. \n"+action.payload
             state.success=""
-            return state
         },
         editSong:(state,action)=>{
             if(!action.payload.id){
@@ -93,10 +89,11 @@ export const songSlice = createSlice({
             for(let i=0 ; i<(state.songs).length;i++){
                 if(state.songs[i].id === action.payload.id){
                     state.songs[i] = action.payload
-                    return state
+                    break
                 }
             }
-            return state
+        
+            
         },
 
         deleteSong:(state,action:{type:any,payload:number})=>{

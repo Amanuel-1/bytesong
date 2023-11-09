@@ -138,7 +138,7 @@ export const SongContainer = styled.div({
 })
 
 export const Loading = styled.div({
-  backgroundColor:"blue",
+  backgroundColor:'rgba(20,30,20.1)',
   width:'100vw',
   height:'100vh',
   position:"absolute",

@@ -12,7 +12,7 @@ export const searchByTitle =(title:string)=>fetch(`http://localhost:3001/songs?t
 export const searchByArtist = (artist:string)=>fetch(`http://localhost:3001/songs?artist_like=${artist}`).then((res)=>res.json)
 
 
-export const addSongAPI   = (song:Song)=>fetch(`http://localhost:3001/songs`,{
+export const addSongAPI   = (song:Song)=>fetch(`http://localhost:3001/songs/`,{
     method:"POST",
     body:JSON.stringify(song),
     headers:{
