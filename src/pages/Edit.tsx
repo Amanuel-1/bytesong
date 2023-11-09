@@ -1,18 +1,22 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { css } from '@emotion/css';
 import { formContainerStyles, formStyles, labelStyles, inputStyles, textareaStyles, Btn } from '../lib/constants';
 import { useDispatch, useSelector } from 'react-redux';
 import { Song, SongActions } from '../store/slices/songSlice';
-import { useParams } from 'react-router-dom';
+import { redirect, useNavigate, useParams } from 'react-router-dom';
 
 
 
 const EditSong = () => {
   const {id} = useParams()
   const dispatch = useDispatch()
+  const navigate  = useNavigate()
   let songId:number  = parseInt(id as string)??0 
-  const songs:Song[] = useSelector((state:any)=>state.songsList.songs)
-  const song= songs.find((s)=>s.id == songId)
+
+// let error:string= useSelector((state:any)=>state.songsList.error)
+  const song  = useSelector((state:any)=>state.songsList.changeSong)
+  console.log('we are lookingi for this song',song)
+
   const [songEntry, setSongEntry] = useState({
     id:songId,
     title: song?.title,
@@ -35,9 +39,14 @@ const EditSong = () => {
 
   const handleSubmit = (event:any) => {
     event.preventDefault();
+    
     setSongEntry({...songEntry,updatedAt:new Date()})
     console.log("to be submitted 🎯 ",songEntry)
     dispatch(SongActions.editSong(songEntry))
+    dispatch(SongActions.getSongsFetch())//this wasn't what i was planning for . it is just a temporary fix
+    
+
+    
     // Add your form submission logic here
   };
 
