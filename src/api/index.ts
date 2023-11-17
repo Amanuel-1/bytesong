@@ -5,7 +5,7 @@ axios.defaults.baseURL = "http://localhost:3001"
 
 export const getSongsAPI  =()=>fetch("http://localhost:3001/songs",{cache:"no-cache"}).then((res)=>res.json());
 
-export const getSongByIdAPI  =(id:number)=> fetch(`http://localhost:3001/songs?id=${id}`).then((res)=>res.json())
+export const getSongByIdAPI  =(id:string)=> fetch(`http://localhost:3001/songs?id=${id}`).then((res)=>res.json())
 
 export const searchByTitle =(title:string)=>fetch(`http://localhost:3001/songs?title_like=${title}`).then((res)=>res.json)
 

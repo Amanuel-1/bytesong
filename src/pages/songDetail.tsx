@@ -8,15 +8,14 @@ import { useDispatch } from 'react-redux';
 const SongDetail = () => {
 
 const {id} = useParams()
-let songId:number  = parseInt(id as string)??0
 const songs:Array<Song>  = useSelector((state:any)=>state.songsList.songs)
 const dispatch = useDispatch()
-const song= songs.find((s)=>s.id == songId)
+const song= songs.find((s)=>s.id == id)
 
 
 
 
-  return songId?( <section
+  return id?( <section
     className={css({
       width: '96%',
       margin:'auto',

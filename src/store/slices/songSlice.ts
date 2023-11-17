@@ -1,8 +1,9 @@
 import {createSlice} from '@reduxjs/toolkit'
 import { redirect } from 'react-router-dom'
+import {nanoid} from 'nanoid'
 
 export type Song  = {
-    id:number,
+    id:string,
     title:string,
     artist:string,
     cover:string,
@@ -27,7 +28,7 @@ export const songSlice = createSlice({
         songs: [] as Song[],
         selectedSong:{} as Song,
         isLoading:false,
-        lastIndex :5,
+        lastId :"a",
         error:"",
         success:"",
         changeSong:{} as Song
@@ -68,12 +69,17 @@ export const songSlice = createSlice({
         },
         addSong(state,action){
             console.log("addSong action dispatched")
-            state.songs.push({...action.payload,id:state.lastIndex})
-            state.lastIndex+=1
+
+            state.lastId = action.payload.id
+
+            state.songs.push({...action.payload})
+
+            return state
         },
         addSongSuccess:(state,action)=>{
-            state.songs = action.payload
-            state.isLoading=false
+
+            // state.songs = action.payload
+            // state.isLoading=false
             state.success ="song added successfully"
             state.error= ""
             console.log("🎇🎇🎇 songSuccess CAlled",state.songs,action)
@@ -93,16 +99,16 @@ export const songSlice = createSlice({
                 }
             }
         
-            
+            return state
         },
 
-        deleteSong:(state,action:{type:any,payload:number})=>{
+        deleteSong:(state,action:{type:any,payload:string})=>{
             state.songs  = state.songs.filter((song)=>song.id !== action.payload)
 
             return state
         } ,
 
-        updateChangingSong:(state,action:{type:any,payload:number})=>{
+        updateChangingSong:(state,action:{type:any,payload:string})=>{
             const songId  =  action.payload
             const song  = state.songs.find((s)=>s.id == songId)
 

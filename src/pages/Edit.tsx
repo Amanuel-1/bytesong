@@ -11,14 +11,14 @@ const EditSong = () => {
   const {id} = useParams()
   const dispatch = useDispatch()
   const navigate  = useNavigate()
-  let songId:number  = parseInt(id as string)??0 
+
 
 // let error:string= useSelector((state:any)=>state.songsList.error)
   const song  = useSelector((state:any)=>state.songsList.changeSong)
   console.log('we are lookingi for this song',song)
 
   const [songEntry, setSongEntry] = useState({
-    id:songId,
+    id:id,
     title: song?.title,
     artist: song?.artist,
     cover: song?.cover,
@@ -38,12 +38,11 @@ const EditSong = () => {
   };
 
   const handleSubmit = (event:any) => {
-    event.preventDefault();
     
     setSongEntry({...songEntry,updatedAt:new Date()})
     console.log("to be submitted 🎯 ",songEntry)
     dispatch(SongActions.editSong(songEntry))
-    dispatch(SongActions.getSongsFetch())//this wasn't what i was planning for . it is just a temporary fix
+    //this wasn't what i was planning for . it is just a temporary fix
     // dispatch(SongActions.editSongSuccess(songEntry))
 
     

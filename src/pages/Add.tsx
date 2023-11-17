@@ -3,11 +3,13 @@ import { css } from '@emotion/css';
 import { formContainerStyles, formStyles, labelStyles, inputStyles, textareaStyles, buttonStyles, Btn } from '../lib/constants';
 import { useDispatch, useSelector } from 'react-redux';
 import { SongActions } from '../store/slices/songSlice';
+import { nanoid } from 'nanoid';
+import { reload } from '../lib/utils';
 const AddSong = () => {
   const dispatch = useDispatch()
-  const lastIndex  = useSelector((state:any)=>state.songsList.lastIndex)
+  const lastId  = useSelector((state:any)=>state.songsList.lastId)
   const [songEntry, setSongEntry] = useState({
-    id:lastIndex,
+    id :'',
     title: '',
     artist: '',
     cover: '',
@@ -27,13 +29,14 @@ const AddSong = () => {
   };
 
   const handleSubmit = (event:any) => {
-    event.preventDefault();
-    setSongEntry({...songEntry,createdAt: Date.now().toString(),updatedAt:Date.now().toString()})
+    const songId  = nanoid()
+      event.preventDefault();
+    setSongEntry({...songEntry,createdAt: Date.now().toString(),updatedAt:Date.now().toString(),id:songId})
     console.log("to be submitted 🎯 ",songEntry)
     dispatch(SongActions.addSong(songEntry))
-    dispatch(SongActions.getSongsFetch())
-    dispatch(SongActions.addSongSuccess(songEntry))
-    
+
+
+  
   };
 
   return (

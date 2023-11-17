@@ -21,7 +21,7 @@ function* workSongFetch(): Generator<ReturnType<typeof call>, any, unknown> {
 
 
 
-export async function getSongById(id:number){
+export async function getSongById(id:string){
   console.log("getSongById is called ✋")
   return await getSongByIdAPI(id)
 }

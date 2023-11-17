@@ -8,7 +8,9 @@ import { Btn } from '../../../lib/constants'
 const Navbar = () => {
 
   const songs  = useSelector((state:any)=>state.songsList.songs)
+  const lastId = useSelector((state:any)=>state.songsList.lastId)
   const navigate = useNavigate()
+
   return (
     <div
     className={css`
@@ -30,7 +32,7 @@ const Navbar = () => {
       <Link to="/"><Logo/></Link>
 
       
-      <Btn onClick={()=>navigate("/add")}  className={styles.navbutton}>➕{songs.length} Add Song</Btn>
+      <Btn onClick={()=>navigate("/add")}  className={styles.navbutton}>➕{lastId+"-lastId "+songs.length} Add Song</Btn>
       
     </div>
   )
